@@ -5,6 +5,19 @@ import re
 from expenseList import ExpenseList
 from export import export_pdf
 
+HELP = "COMMAND:" + "\n" +\
+        "   .add    - Input an expense entry into the current expenses list manually" + "\n" +\
+        "   .amend  - Amend an expense entry in the current expenses list" + "\n" +\
+        "   .apend  - Add current expenses list into an existing csv file" + "\n" +\
+        "   .delete - Delete an expense entry in the current expenses list" + "\n" +\
+        "   .export - Export the summary pivot table and expenses list to a report in pdf format" + "\n" +\
+        "   .help   - Show help" + "\n" +\
+        "   .list   - List out the current expenses list in tabulated format" + "\n" +\
+        "   .load   - Load expense data from a csv file and append to the current expenses list" + "\n" +\
+        "   .pivot  - Print out a pivot summary of the current expenses list" + "\n" +\
+        "   .quit   - Exit the program" + "\n" +\
+        "   .save   - save current expenses list to a new csv file"
+
 
 def main():
     #argparse
@@ -52,20 +65,7 @@ def main():
 
 
             case ".help":
-                help = "COMMAND:" + "\n" +\
-                        "   .add    - Input an expense entry into the current expenses list manually" + "\n" +\
-                        "   .amend  - Amend an expense entry in the current expenses list" + "\n" +\
-                        "   .apend  - Add current expenses list into an existing csv file" + "\n" +\
-                        "   .delete - Delete an expense entry in the current expenses list" + "\n" +\
-                        "   .export - Export the summary pivot table and expenses list to a report in pdf format" + "\n" +\
-                        "   .help   - Show help" + "\n" +\
-                        "   .list   - List out the current expenses list in tabulated format" + "\n" +\
-                        "   .load   - Load expense data from a csv file and append to the current expenses list" + "\n" +\
-                        "   .pivot  - Print out a pivot summary of the current expenses list" + "\n" +\
-                        "   .quit   - Exit the program" + "\n" +\
-                        "   .save   - save current expenses list to a new csv file"
-
-                print(help)
+                print(HELP)
 
 
             case ".list":
@@ -115,7 +115,7 @@ def main():
 
             case _:
                 print("Invalid command\n")
-                print_help()
+                print(HELP)
 
     print("\n- END -\n")
     return 0
